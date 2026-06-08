@@ -1,0 +1,18 @@
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        if(ransomNote.length()>magazine.length()) return false;
+        unordered_map<char,int>hash;
+        for(char ch:magazine){
+            hash[ch]++;
+        }
+        for(char ch:ransomNote){
+            if(hash[ch]<=0){
+                return false;
+            }
+            hash[ch]--;
+        }
+        return true;
+
+    }
+};
