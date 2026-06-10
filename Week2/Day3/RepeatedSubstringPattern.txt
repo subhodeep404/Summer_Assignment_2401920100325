@@ -1,0 +1,8 @@
+class Solution {
+public:
+    bool repeatedSubstringPattern(string s) {
+        string conc=s+s;
+        string subs=conc.substr(1,conc.length()-2);
+        return subs.find(s)!=string::npos;        
+    }
+};
